@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+
+//mainClassName = 'at.gnu.test.gradle.GradleTest'
+description = 'A trivial Gradle build'
+version = '1.0'
+
+
+dependencies {
+//  compile 'com.google.guava:guava:23.0'
+    testCompile 'junit:junit:4.12'
+//  compile "org.gradle:gradle-tooling-api:4.0"
+//  runtime 'org.slf4j:slf4j-simple:1.7.10'
+}
+
+
+repositories {
+    jcenter()
+}
+
+
+task copy(type: Copy) {
+    from 'src'
+    into 'dest'
+}
+
+task zip(type: Zip) {
+    from 'src'
+}
+
+task hello {
+    doLast {
+        println 'Hello, World!'
+    }
+}
